@@ -1,0 +1,46 @@
+#:kivy 1.0.9
+<Log>:
+	ScrollView:
+		bar_width:10
+		scroll_type:['bars']
+		TextInput:
+			id:log
+			text:"legal"
+			size_hint: 1, None
+			height: max(self.minimum_height, code.height)
+<Code@ScrollView>:
+
+		
+
+<Frame>:
+	layout_ref:layout
+	log:layout.log
+	code:layout.code
+	BoxLayout:
+		log:log
+		code:scrlv.code
+		id:layout
+		orientation:'vertical'
+		height:root.height
+		width:root.width
+		BoxLayout:
+			rgba:1,1,1,1
+			orientation:'horizontal'
+			size_hint:1,.05
+		ScrollView:
+			code:code
+			id:scrlv
+			size_hint:1,.8
+			bar_width:10
+			scroll_type:['bars']
+			TextInput:
+				id:code
+				text:"legal"
+				size_hint: 1, None
+				height: max(self.minimum_height, code.height)
+		Log:
+			id:log
+			size_hint:1,.15
+			text:"gaeth"
+	
+
